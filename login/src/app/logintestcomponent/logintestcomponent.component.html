@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .login-container {
+      margin-top: 100px;
+    }
+    .card-login {
+      max-width: 400px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+    }
+    .login-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .submit-btn {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container login-container">
+    <div class="card card-login">
+      <h2 class="login-title">LOGIN</h2>
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" id="uname" name="uname" class="form-control" placeholder="Username" [(ngModel)]="formData.uname">
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="formData.password">
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Login</button>
+        <div class="mt-3">
+          {{data?.message}}
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
